@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ThreeLabelCellID" rowHeight="142" id="QXw-86-IBP" customClass="ThreeLabelCell" customModule="NBA_Teams" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="518" height="142"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QXw-86-IBP" id="1w7-Mw-Rv7">
+                <rect key="frame" x="0.0" y="0.0" width="487" height="142"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZV-td-mQF">
+                        <rect key="frame" x="20" y="30" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DE4-kf-PbG">
+                        <rect key="frame" x="20" y="59" width="51.5" height="24"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ho-ph-QYi">
+                        <rect key="frame" x="20" y="91" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DE4-kf-PbG" firstAttribute="centerY" secondItem="1w7-Mw-Rv7" secondAttribute="centerY" id="3y3-bf-uaw"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0Ho-ph-QYi" secondAttribute="bottom" constant="10" id="HOY-Tn-cqi"/>
+                    <constraint firstItem="0Ho-ph-QYi" firstAttribute="top" secondItem="DE4-kf-PbG" secondAttribute="bottom" constant="8" symbolic="YES" id="RcX-PH-zoJ"/>
+                    <constraint firstItem="DE4-kf-PbG" firstAttribute="leading" secondItem="1w7-Mw-Rv7" secondAttribute="leadingMargin" id="Rgq-9W-cc9"/>
+                    <constraint firstItem="DE4-kf-PbG" firstAttribute="top" secondItem="JZV-td-mQF" secondAttribute="bottom" constant="8" symbolic="YES" id="UeL-Bl-ntn"/>
+                    <constraint firstItem="JZV-td-mQF" firstAttribute="leading" secondItem="DE4-kf-PbG" secondAttribute="leading" id="iKD-JB-Ph9"/>
+                    <constraint firstItem="0Ho-ph-QYi" firstAttribute="leading" secondItem="DE4-kf-PbG" secondAttribute="leading" id="iKt-eI-P62"/>
+                    <constraint firstItem="JZV-td-mQF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="1w7-Mw-Rv7" secondAttribute="top" constant="10" id="mYV-N5-SEA"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="centerLabel" destination="DE4-kf-PbG" id="BJi-J0-u2m"/>
+                <outlet property="lowerLabel" destination="0Ho-ph-QYi" id="mcQ-88-f7n"/>
+                <outlet property="upperLabel" destination="JZV-td-mQF" id="7hp-2e-VGt"/>
+            </connections>
+            <point key="canvasLocation" x="220.28985507246378" y="25.446428571428569"/>
+        </tableViewCell>
+    </objects>
+</document>

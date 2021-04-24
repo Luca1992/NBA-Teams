@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JiK-eb-EgX">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Players View Controller-->
+        <scene sceneID="JDv-Y2-yra">
+            <objects>
+                <viewController id="JiK-eb-EgX" customClass="PlayersViewController" customModule="NBA_Teams" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SDL-6v-hWg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hw-Or-HXu">
+                                <rect key="frame" x="0.0" y="98" width="414" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lkk-ht-1p4">
+                                <rect key="frame" x="0.0" y="142" width="414" height="720"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6g-ay-lxo">
+                                <rect key="frame" x="20" y="44" width="40" height="34"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" name="AccentColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backPressed:" destination="JiK-eb-EgX" eventType="touchUpInside" id="1Gz-ek-lYK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hnu-va-oHU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T6g-ay-lxo" firstAttribute="top" secondItem="hnu-va-oHU" secondAttribute="top" id="CMN-gm-43S"/>
+                            <constraint firstItem="T6g-ay-lxo" firstAttribute="leading" secondItem="hnu-va-oHU" secondAttribute="leading" constant="20" id="KVj-oi-m2i"/>
+                            <constraint firstItem="3hw-Or-HXu" firstAttribute="centerX" secondItem="SDL-6v-hWg" secondAttribute="centerX" id="VQO-RL-5pk"/>
+                            <constraint firstItem="hnu-va-oHU" firstAttribute="bottom" secondItem="Lkk-ht-1p4" secondAttribute="bottom" id="dnW-6f-KrT"/>
+                            <constraint firstItem="Lkk-ht-1p4" firstAttribute="top" secondItem="3hw-Or-HXu" secondAttribute="bottom" constant="20" id="f3v-Yp-YYd"/>
+                            <constraint firstItem="Lkk-ht-1p4" firstAttribute="centerX" secondItem="SDL-6v-hWg" secondAttribute="centerX" id="rX5-wb-6J5"/>
+                            <constraint firstItem="3hw-Or-HXu" firstAttribute="leading" secondItem="hnu-va-oHU" secondAttribute="leading" id="veb-DH-uUn"/>
+                            <constraint firstItem="Lkk-ht-1p4" firstAttribute="leading" secondItem="hnu-va-oHU" secondAttribute="leading" id="y3i-PP-7t3"/>
+                            <constraint firstItem="3hw-Or-HXu" firstAttribute="top" secondItem="T6g-ay-lxo" secondAttribute="bottom" constant="20" id="z2u-Pj-Y3h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableList" destination="Lkk-ht-1p4" id="oe3-7B-7vK"/>
+                        <outlet property="titleLabel" destination="3hw-Or-HXu" id="Jbc-qW-kXB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rhq-yo-Hgg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="110"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
