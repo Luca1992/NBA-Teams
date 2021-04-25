@@ -36,7 +36,8 @@ class PlayersViewController: BaseViewController {
     override func setListener() {
         viewModel?.$players.share().sink(receiveValue: { [weak self] (players) in
             guard let self = self else { return }
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 self.refreshControl.endRefreshing()
                 if !players.isEmpty {
                     self.tableList.reloadData()
@@ -58,7 +59,9 @@ class PlayersViewController: BaseViewController {
 extension PlayersViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        if let player = self.viewModel?.players[indexPath.row] {
+            Navigator.instance.pushPlayerDetail(playerID: player.id)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

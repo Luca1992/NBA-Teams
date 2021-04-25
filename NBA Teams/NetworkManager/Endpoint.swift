@@ -9,6 +9,6 @@ import Foundation
 
 enum Endpoint: String {
     case getAllTeams = "/teams?page="
-    case getPlayers = "/players?page=#&per_page=100"
-    case detailPlayer
+    case getPlayers = "/players?page=#&per_page=200"
+    case detailPlayer = "/players"
 }

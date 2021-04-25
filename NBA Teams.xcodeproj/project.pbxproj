@@ -34,6 +34,9 @@
 		9E6DB06126349BB9005A0106 /* PlayersViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6DB06026349BB9005A0106 /* PlayersViewController.storyboard */; };
 		9E6DB06626349C3C005A0106 /* PlayersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DB06526349C3C005A0106 /* PlayersViewController.swift */; };
 		9E6DB06B26349C71005A0106 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DB06A26349C71005A0106 /* BaseViewController.swift */; };
+		9E6DB07426356DDA005A0106 /* PlayerDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E6DB07326356DD9005A0106 /* PlayerDetailViewController.storyboard */; };
+		9E6DB07D2635721E005A0106 /* PlayerDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DB07C2635721E005A0106 /* PlayerDetailViewModel.swift */; };
+		9E6DB08226357333005A0106 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E6DB08126357333005A0106 /* PlayerDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		9E6DB06026349BB9005A0106 /* PlayersViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayersViewController.storyboard; sourceTree = "<group>"; };
 		9E6DB06526349C3C005A0106 /* PlayersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersViewController.swift; sourceTree = "<group>"; };
 		9E6DB06A26349C71005A0106 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9E6DB07326356DD9005A0106 /* PlayerDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerDetailViewController.storyboard; sourceTree = "<group>"; };
+		9E6DB07C2635721E005A0106 /* PlayerDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewModel.swift; sourceTree = "<group>"; };
+		9E6DB08126357333005A0106 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +229,7 @@
 			children = (
 				9E6DAFF12634793D005A0106 /* TeamsViewModel */,
 				9E6DB05926349A49005A0106 /* PlayersViewModel */,
+				9E6DB07B263571FA005A0106 /* PlayerDetailViewModel */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -233,6 +240,7 @@
 				9E6DB06A26349C71005A0106 /* BaseViewController.swift */,
 				9E6DB01B26347BF7005A0106 /* TeamsViewController */,
 				9E6DB05F26349B98005A0106 /* PlayersViewController */,
+				9E6DB07226356DB2005A0106 /* PlayerDetailViewController */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -287,6 +295,23 @@
 				9E6DB06526349C3C005A0106 /* PlayersViewController.swift */,
 			);
 			path = PlayersViewController;
+			sourceTree = "<group>";
+		};
+		9E6DB07226356DB2005A0106 /* PlayerDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9E6DB07326356DD9005A0106 /* PlayerDetailViewController.storyboard */,
+				9E6DB08126357333005A0106 /* PlayerDetailViewController.swift */,
+			);
+			path = PlayerDetailViewController;
+			sourceTree = "<group>";
+		};
+		9E6DB07B263571FA005A0106 /* PlayerDetailViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9E6DB07C2635721E005A0106 /* PlayerDetailViewModel.swift */,
+			);
+			path = PlayerDetailViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E6DB07426356DDA005A0106 /* PlayerDetailViewController.storyboard in Resources */,
 				9E6DAF9426346A0B005A0106 /* LaunchScreen.storyboard in Resources */,
 				9E6DB02C263480B4005A0106 /* ThreeLabelCell.xib in Resources */,
 				9E6DB06126349BB9005A0106 /* PlayersViewController.storyboard in Resources */,
@@ -424,6 +450,7 @@
 			files = (
 				9E6DB02226347CE7005A0106 /* TeamsViewController.swift in Sources */,
 				9E6DAF8C26346A07005A0106 /* ViewController.swift in Sources */,
+				9E6DB08226357333005A0106 /* PlayerDetailViewController.swift in Sources */,
 				9E6DAFEA2634763B005A0106 /* UseCase.swift in Sources */,
 				9E6DB05B26349A65005A0106 /* PlayersViewModel.swift in Sources */,
 				9E6DB06B26349C71005A0106 /* BaseViewController.swift in Sources */,
@@ -440,6 +467,7 @@
 				9E6DAFF32634795C005A0106 /* TeamsViewModel.swift in Sources */,
 				9E6DB04D2634965C005A0106 /* Player.swift in Sources */,
 				9E6DB0312634817B005A0106 /* ThreeLabelCell.swift in Sources */,
+				9E6DB07D2635721E005A0106 /* PlayerDetailViewModel.swift in Sources */,
 				9E6DB06626349C3C005A0106 /* PlayersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

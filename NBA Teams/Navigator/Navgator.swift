@@ -35,6 +35,12 @@ class Navigator {
             nvc.pushViewController(vc, animated: false)
         }
     }
+
+    func pushPlayerDetail(playerID: Int){
+        if let vc = VCBuilder.instance.buildPlayerDetail(playerID: playerID) {
+            nvc.pushViewController(vc, animated: false)
+        }
+    }
 }
 
 extension UINavigationController {

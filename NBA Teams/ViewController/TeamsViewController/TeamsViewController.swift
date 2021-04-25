@@ -33,7 +33,8 @@ class TeamsViewController: BaseViewController {
     override func setListener() {
         viewModel?.$teams.share().sink(receiveValue: { [weak self] (teams) in
             guard let self = self else { return }
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
                 self.refreshControl.endRefreshing()
                 if !teams.isEmpty {
                     self.tableList.reloadData()

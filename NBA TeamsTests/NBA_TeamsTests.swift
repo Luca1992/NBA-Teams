@@ -18,9 +18,42 @@ class NBA_TeamsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testAllTeams() throws {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let networkManager = NetworkManager()
+        networkManager.getAllTeams { [weak self] (result) in
+            switch result {
+            case .success(let teams):
+                XCTAssert(!teams.isEmpty)
+            case .failure(let error):
+                XCTAssert(error == nil)
+            }
+        }
+    }
+
+    func testPlayersByTeam() throws {
+        let networkManager = NetworkManager()
+        networkManager.getAllPlayersByTeam() { [weak self] (result) in
+            switch result {
+            case .success(let players):
+                XCTAssert(!players.isEmpty)
+            case .failure(let error):
+                XCTAssert(error == nil)
+            }
+        }
+    }
+
+    func testPlayerDetail() throws {
+        let networkManager = NetworkManager()
+        networkManager.getPlayer(id: 1) { [weak self] (result) in
+            switch result {
+            case .success(_):
+                XCTAssert(true)
+            case .failure(let error):
+                XCTAssert(error == nil)
+            }
+        }
     }
 
     func testPerformanceExample() throws {

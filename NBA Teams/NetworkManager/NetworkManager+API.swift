@@ -46,4 +46,23 @@ extension NetworkManager {
         }
         task.resume()
     }
+
+    func getPlayer(id: Int, complition: @escaping (Result<Player>) -> Void) {
+        guard let request = Request(url: Endpoint.detailPlayer.rawValue + "/\(id)", method: .get).request else { return }
+        let task = NetworkManager.sessionManager.dataTask(with: request) { [weak self] (data, response, error) in
+            if let err = error {
+                complition(Result.failure(err))
+            } else {
+                if let dataJSON = data {
+                    do {
+                        let obj = try JSONDecoder().decode(Player.self, from: dataJSON)
+                        complition(Result.success(obj))
+                    } catch let err {
+                        complition(Result.failure(err))
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
 }

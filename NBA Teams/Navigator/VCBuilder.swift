@@ -32,4 +32,15 @@ class VCBuilder {
         vc.viewModel = viewModel
         return vc
     }
+
+    func buildPlayerDetail(playerID: Int) -> PlayerDetailViewController? {
+        let sb = UIStoryboard(name: "PlayerDetailViewController", bundle: nil)
+        guard let vc = sb.instantiateInitialViewController() as? PlayerDetailViewController else {
+            return nil
+        }
+        let viewModel = PlayerDetailViewModel()
+        viewModel.playerID = playerID
+        vc.viewModel = viewModel
+        return vc
+    }
 }
