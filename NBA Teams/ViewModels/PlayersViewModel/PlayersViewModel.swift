@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class PlayersViewModel: ObservableObject, ObservableViewModel {
+class PlayersViewModel: ObservableObject {
 
     var useCase: UseCase = UseCase()
 
@@ -18,27 +18,21 @@ class PlayersViewModel: ObservableObject, ObservableViewModel {
 
     @Published var players: [Player] = []
 
+    @Published var isLoading: Bool = true
+
+    var playersCount: Int {
+        return self.players.count
+    }
+
     func didLoad() {
         if let id = self.team?.id {
             self.useCase.getAllPlayersByTeam(teamID: id) { [weak self] (playersResponse, errorResponse) in
                 guard let self = self else { return }
                 if let players = playersResponse {
-                    self.players = players
-                }
-            }
-        }
-    }
-
-    func update() {
-        if let id = self.team?.id {
-            self.currentPage += 1
-            self.useCase.getAllPlayersByTeam(page: self.currentPage, teamID: id) { [weak self] (playersResponse, errorResponse) in
-                guard let self = self else { return }
-                if let players = playersResponse {
-                    let newPlayers = players.filter({ player in
-                        return !self.players.contains(where: { $0.id == player.id })
-                    })
-                    self.players.append(contentsOf: newPlayers)
+                    DispatchQueue.main.async {
+                        self.players = players
+                        self.isLoading = false
+                    }
                 }
             }
         }

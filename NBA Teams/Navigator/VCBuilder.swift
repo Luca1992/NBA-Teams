@@ -12,35 +12,29 @@ class VCBuilder {
 
     static let instance = VCBuilder()
 
-    func buildAllTeams() -> TeamsViewController? {
-        let sb = UIStoryboard(name: "TeamsViewController", bundle: nil)
-        guard let vc = sb.instantiateInitialViewController() as? TeamsViewController else {
-            return nil
-        }
+    func buildAllTeams() -> BaseViewController? {
+        let vc = BaseViewController()
         let viewModel = TeamsViewmodel()
-        vc.viewModel = viewModel
+        let view = TeamsView(viewModel: viewModel)
+        vc.addSubSwiftUIView(view, to: vc.view)
         return vc
     }
 
-    func buildAllPlayersByTeam(team: Team) -> PlayersViewController? {
-        let sb = UIStoryboard(name: "PlayersViewController", bundle: nil)
-        guard let vc = sb.instantiateInitialViewController() as? PlayersViewController else {
-            return nil
-        }
+    func buildAllPlayersByTeam(team: Team) -> BaseViewController? {
+        let vc = BaseViewController()
         let viewModel = PlayersViewModel()
         viewModel.team = team
-        vc.viewModel = viewModel
+        let view = PlayersOfTeamView(viewModel: viewModel)
+        vc.addSubSwiftUIView(view, to: vc.view)
         return vc
     }
 
-    func buildPlayerDetail(playerID: Int) -> PlayerDetailViewController? {
-        let sb = UIStoryboard(name: "PlayerDetailViewController", bundle: nil)
-        guard let vc = sb.instantiateInitialViewController() as? PlayerDetailViewController else {
-            return nil
-        }
+    func buildPlayerDetail(playerID: Int) -> BaseViewController? {
+        let vc = BaseViewController()
         let viewModel = PlayerDetailViewModel()
         viewModel.playerID = playerID
-        vc.viewModel = viewModel
+        let view = PlayerDetailView(viewModel: viewModel)
+        vc.addSubSwiftUIView(view, to: vc.view)
         return vc
     }
 }

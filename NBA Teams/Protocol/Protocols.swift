@@ -6,10 +6,7 @@
 //
 
 import Foundation
-
-protocol ObservableViewModel: class {
-    func update()
-}
+import Combine
 
 protocol ThreeLabel {
     var upperTitle: String { get }

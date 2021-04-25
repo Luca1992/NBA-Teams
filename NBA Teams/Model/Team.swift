@@ -25,7 +25,7 @@ struct TeamsList: Codable {
     }
 }
 
-struct Team: Codable, ThreeLabel {
+struct Team: Codable, Identifiable, ThreeLabel {
 
     var id: Int
     var abbreviation: String

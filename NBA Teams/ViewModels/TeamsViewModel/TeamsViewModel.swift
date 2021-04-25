@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class TeamsViewmodel: ObservableObject, ObservableViewModel {
+class TeamsViewmodel: ObservableObject {
 
     var useCase: UseCase = UseCase()
 
@@ -16,22 +16,18 @@ class TeamsViewmodel: ObservableObject, ObservableViewModel {
 
     @Published var teams: [Team] = []
 
+    var teamsCount: Int {
+        return self.teams.count
+    }
+
     func didLoad() {
         self.useCase.getAllTeams { [weak self] (responseTeams, responseErr) in
             guard let self = self else { return }
             if let teams = responseTeams {
-                self.currentPage += 1
-                self.teams = teams
-            }
-        }
-    }
-
-    func update() {
-        self.currentPage += 1
-        self.useCase.getAllTeams(page: self.currentPage) { [weak self] (responseTeams, responseErr) in
-            guard let self = self else { return }
-            if let teams = responseTeams {
-                self.teams.append(contentsOf: teams)
+                DispatchQueue.main.async {
+                    self.currentPage += 1
+                    self.teams = teams
+                }
             }
         }
     }

@@ -20,7 +20,9 @@ class PlayerDetailViewModel: ObservableObject {
         self.useCase.getPlayer(id: self.playerID) { [weak self] (detail, error) in
             guard let self = self else { return }
             if let detail = detail {
-                self.detail = detail
+                DispatchQueue.main.async { [weak self] in
+                    self?.detail = detail
+                }
             }
         }
     }

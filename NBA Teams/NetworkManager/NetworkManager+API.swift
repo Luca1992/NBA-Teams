@@ -28,7 +28,7 @@ extension NetworkManager {
         task.resume()
     }
 
-    func getAllPlayersByTeam(page: Int = 0, complition: @escaping (Result<[Player]>) -> Void) {
+    func getAllPlayersByTeam(page: Int = 1, maxPages: Int? = nil, currentPlayers: [Player] = [], complition: @escaping (Result<[Player]>) -> Void) {
         guard let request = Request(url: Endpoint.getPlayers.rawValue.replacingOccurrences(of: "#", with: "\(page)"), method: .get).request else { return }
         let task = NetworkManager.sessionManager.dataTask(with: request) { [weak self] (data, response, error) in
             if let err = error {
@@ -37,7 +37,13 @@ extension NetworkManager {
                 if let dataJSON = data {
                     do {
                         let obj = try JSONDecoder().decode(PlayersList.self, from: dataJSON)
-                        complition(Result.success(obj.list))
+                        if page == maxPages {
+                            complition(Result.success(currentPlayers))
+                        } else {
+                            var newPlayers = currentPlayers
+                            newPlayers.append(contentsOf: obj.list)
+                            self?.getAllPlayersByTeam(page: page + 1, maxPages: obj.metadata.totalPages, currentPlayers: newPlayers, complition: complition)
+                        }
                     } catch let err {
                         complition(Result.failure(err))
                     }

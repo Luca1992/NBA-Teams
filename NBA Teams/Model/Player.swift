@@ -25,7 +25,7 @@ struct PlayersList: Codable {
     }
 }
 
-struct Player: Codable, ThreeLabel {
+struct Player: Codable, Identifiable, ThreeLabel {
 
     var id: Int
     var firstName: String
