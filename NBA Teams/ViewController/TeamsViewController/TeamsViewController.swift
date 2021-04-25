@@ -27,7 +27,6 @@ class TeamsViewController: BaseViewController {
         tableList.delegate = self
         tableList.dataSource = self
         tableList.register(UINib(nibName: "ThreeLabelCell", bundle: nil), forCellReuseIdentifier: "ThreeLabelCellID")
-        setListener()
     }
 
     override func setListener() {

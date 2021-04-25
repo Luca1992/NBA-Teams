@@ -32,7 +32,6 @@ class PlayerDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel?.didLoad()
-        self.setListener()
     }
 
     override func setListener() {
